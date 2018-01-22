@@ -16,12 +16,14 @@ public:
 	Being(int i, int s, int d, std::string n);
 	Being(std::string n);
 
-	void changeIntelligence(int change);
-	void changeStrength(int change);
-	void changeDexterity(int change);
-	void changeHealth(int change);
-	void changeMana(int change);
-	void changeArmor(int change);
+	void changeIntelligence(int changeBy);
+	void changeStrength(int changeBy);
+	void changeDexterity(int changeBy);
+	void changeHealth(int changeBy);
+	void changeMana(int changeBy);
+	void changeArmor(int changeBy);
+	void setMaxHealth(int max);
+	void setMaxMana(int max);
 
 	int getIntelligence() const;
 	int getIntelMod() const;
@@ -42,10 +44,7 @@ protected:
 			armorClass;
 
 private:
-
-
-
-
+	void setModifiers();
 
 };
 
