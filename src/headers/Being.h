@@ -13,9 +13,6 @@
 class Being {
 
 public:
-	Being(int i, int s, int d, std::string n);
-	Being(std::string n);
-
 	void changeIntelligence(int changeBy)=0;
 	void changeStrength(int changeBy)=0;
 	void changeDexterity(int changeBy)=0;
@@ -38,10 +35,12 @@ public:
 	int getArmorClass() const;
 
 protected:
-
 	int intelligence, intelligenceMod, strength, strengthMod, dexterity,
 			dexterityMod, maxHealth, currentHealth, maxMana, currentMana,
 			armorClass;
+
+	Being(int i, int s, int d, std::string n);
+	Being(std::string n);
 
 private:
 	void setModifiers() {
@@ -49,7 +48,7 @@ private:
 		strengthMod = setMod(getStrength());
 		dexterityMod = setMod(getDexterity());
 	}
-	int setMod(int stat) {
+	int setMod(int stat) const {
 		int mod;
 		switch (stat) {
 		case 1:
@@ -112,7 +111,7 @@ private:
 			mod = 9;
 			break;
 		case 30:
-			mod = 105;
+			mod = 10;
 			break;
 		default:
 			break;
