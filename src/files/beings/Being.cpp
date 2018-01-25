@@ -99,6 +99,11 @@ int Being::getArmorClass() const {
 	return armorClass;
 }
 
+std::string Being::toString() const {
+	return "Current Health: " + getCurrentHealth() + ", Current Mana:"
+			+ getCurrentMana();
+}
+
 void Being::setModifiers() {
 	intelligenceMod = setMod(getIntelligence());
 	strengthMod = setMod(getStrength());

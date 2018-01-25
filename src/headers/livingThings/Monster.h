@@ -9,8 +9,9 @@
 #define HEADERS_MONSTER_H_
 
 #include "../livingThings/Being.h"
+#include "../headers/interfaces/IAattackable.h"
 
-class Monster: public Being {
+class Monster: public Being, IAttackable {
 
 	enum MonsterType {
 		ORC, DRAGON, GOBLIN, KOBOLD, TROLL, GIANT

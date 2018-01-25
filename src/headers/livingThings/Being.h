@@ -36,6 +36,8 @@ public:
 	int getCurrentMana() const;
 	int getArmorClass() const;
 
+	std::string toString() const;
+
 protected:
 	int intelligence, intelligenceMod, strength, strengthMod, dexterity,
 			dexterityMod, maxHealth, currentHealth, maxMana, currentMana,

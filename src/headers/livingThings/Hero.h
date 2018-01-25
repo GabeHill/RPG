@@ -5,12 +5,13 @@
  *      Author: owner
  */
 
-#ifndef HEADERS_MONSTER_H_
-#define HEADERS_MONSTER_H_
+#ifndef HEADERS_HERO_H_
+#define HEADERS_HERO_H_
 
 #include "../livingThings/Being.h"
+#include "../headers/interfaces/IAattackable.h"
 
-class Hero: public Being {
+class Hero: public Being, IAttackable {
 
 	enum HeroRace {
 		DRAGONBORN, TAXABI, ELF, HALFLING, TIEFLING, HUMAN,
@@ -27,6 +28,7 @@ public:
 
 protected:
 private:
+	std::array<Loot, 20> loots;
 };
 
 
