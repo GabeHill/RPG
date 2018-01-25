@@ -5,7 +5,7 @@
  *      Author: owner
  */
 
-#include "../headers/Being.h"
+#include "../../headers/livingThings/Being.h"
 
 Being::Being(std::string n) :
 		name(n), intelligence(1), strength(1), dexterity(1) {
@@ -38,6 +38,7 @@ void Being::changeDexterity(int changeBy) {
 	dexterity = dexterity < 0 ? 0 : dexterity;
 	currentHealth = dexterity > 0 ? currentHealth : 0;
 }
+
 void Being::changeHealth(int changeBy) {
 	currentHealth += changeBy;
 	currentHealth = currentHealth > maxHealth ? maxHealth : currentHealth;
@@ -182,3 +183,4 @@ int Being::setMana() const {
 int Being::setHealth() const {
 	return (getStrengthMod() + 8);
 }
+

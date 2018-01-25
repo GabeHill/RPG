@@ -13,6 +13,8 @@
 class Being {
 
 public:
+	const std::string name;
+
 	void changeIntelligence(int changeBy);
 	void changeStrength(int changeBy);
 	void changeDexterity(int changeBy);
@@ -39,15 +41,14 @@ protected:
 			dexterityMod, maxHealth, currentHealth, maxMana, currentMana,
 			armorClass;
 
-	std::string name;
-
 	Being(int i, int s, int d, std::string n);
 	Being(int i, int s, int d);
 	Being(std::string n);
 
 private:
-	void Being::setModifiers();
-	int Being::setMod(int stat) const;
+private:
+	void setModifiers();
+	int setMod(int stat) const;
 	int setMana() const;
 	int setHealth() const;
 };
