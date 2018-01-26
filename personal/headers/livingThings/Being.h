@@ -39,9 +39,9 @@ public:
 	std::string toString() const;
 
 protected:
-	int intelligence = 0, intelligenceMod = 0, strength = 0, strengthMod = 0,
-			dexterity = 0, dexterityMod = 0, maxHealth = 0, currentHealth = 0,
-			maxMana = 0, currentMana = 0, armorClass = 0;
+	int intelligence, intelligenceMod, strength, strengthMod, dexterity,
+			dexterityMod, maxHealth, currentHealth, maxMana, currentMana,
+			armorClass;
 
 	Being(int i, int s, int d, std::string n);
 	Being(int i, int s, int d);

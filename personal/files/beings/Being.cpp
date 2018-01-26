@@ -8,24 +8,15 @@
 #include "../../headers/livingThings/Being.h"
 
 Being::Being(std::string n) :
-		name(n) {
-	changeStrength(1);
-	changeDexterity(1);
-	changeIntelligence(1);
+		name(n), intelligence(1), strength(1), dexterity(1) {
 	setModifiers();
 }
 Being::Being(int i, int s, int d, std::string n) :
-		name(n) {
-	changeStrength(s);
-	changeDexterity(d);
-	changeIntelligence(i);
+		name(n), intelligence(i), strength(s), dexterity(d) {
 	setModifiers();
 }
-Being::Being(int i, int s, int d) {
-	name = "None";
-	changeStrength(s);
-	changeDexterity(d);
-	changeIntelligence(i);
+Being::Being(int i, int s, int d) :
+		name("None"), intelligence(i), strength(s), dexterity(d) {
 	setModifiers();
 }
 
