@@ -22,7 +22,7 @@ int Loot::getValue() const {
 	return 0;
 }
 Loot::LootType Loot::getType() const {
-	return SIMPLE;
+	return GENERIC;
 }
 std::string Loot::toString() const {
 	return "";

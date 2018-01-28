@@ -14,10 +14,21 @@
 class Hero: public Being, IAttackable {
 
 	enum HeroRace {
-		DRAGONBORN, TAXABI, ELF, HALFLING, TIEFLING, HUMAN,
+		DRAGONBORN = "dragonborn",
+		TAXABI = "taxabi",
+		ELF = "elf",
+		HALFLING = "halfling",
+		TIEFLING = "tiefling",
+		HUMAN = "human",
 	};
 	enum HeroClass {
-		ROUGE, RANGER, WIZARD, FIGHTER, BARBARIAN, CLERIC, MONK,
+		ROUGE = "rouge",
+		RANGER = "ranger",
+		WIZARD = "wizard",
+		FIGHTER = "fighter",
+		BARBARIAN = "barbarian",
+		CLERIC = "cleric",
+		MONK = "monk"
 	};
 
 public:
@@ -25,6 +36,11 @@ public:
 	const HeroClass cl;
 
 	Hero(int i, int s, int d, std::string n, HeroRace r, HeroClass c);
+
+	int attack() const;
+	void takeDmg(int dmg);
+
+	std::string toString() const;
 
 protected:
 private:

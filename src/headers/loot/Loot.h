@@ -11,27 +11,36 @@
 class Loot {
 
 	enum LootType {
-		ARMOR, CONSUMABLE, WEAPON, SIMPLE,
+		ARMOR = "Armor",
+		CONSUMABLE = "Consumable",
+		WEAPON = "Weapon",
+		GENERIC = "Generic",
 	};
 
 	enum GenericLoot {
-		PELT, CHAIR, POT, RUG, BUCKET, HAT, CLOTH
+		PELT = "pelt",
+		CHAIR = "chair",
+		POT = "pot",
+		RUG = "rug",
+		BUCKET = "bucket",
+		HAT = "hat",
+		CLOTH = "cloth"
 	};
 
 public:
-	Loot();
+	const std::string name;
+	const LootType type;
+
+	Loot(GenericLoot g);
 	Loot(LootType t, int val);
 
-	std::string getName() const;
 	int getValue() const;
-	LootType getType() const;
-	std::string toString() const;
+	std::string getDesc() const;
 
 protected:
 private:
-	const std::string name;
+
 	int value;
-	const LootType type;
 };
 
 #endif /* HEADERS_LOOT_LOOT_H_ */

@@ -10,7 +10,7 @@
 Monster::Monster(int i, int s, int d, std::string n, MonsterType t, bool isBoss) :
 		Being(i, s, d, n) {
 	type = t;
-	this->isBoss = isBoss;
+	this->boss = isBoss;
 }
 Monster::Monster(int i, int s, int d, MonsterType t) :
 		Being(i, s, d) {

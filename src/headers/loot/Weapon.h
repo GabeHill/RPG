@@ -11,16 +11,22 @@
 #include "Loot.h"
 
 class Weapon: public Loot {
+
+	enum WeaponType {
+
+	};
+
 public:
-	Weapon(std::string t);
+	const WeaponType type;
+	const int damageMin;
+	const int damageMax;
+
+	Weapon(WeaponType t, int min, int max);
 
 	int getDamage() const;
 	std::string toString() const;
 protected:
 private:
-	const std::string title;
-	const int damageMin;
-	const int damageMax;
 
 };
 

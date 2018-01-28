@@ -18,7 +18,7 @@ class Monster: public Being, IAttackable {
 	};
 
 public:
-	const bool isBoss;
+	const bool boss;
 	const MonsterType type;
 
 	Monster(int i, int s, int d, std::string n, MonsterType t, bool isBoss);

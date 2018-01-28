@@ -17,7 +17,7 @@ public:
 
 	ManaPot();
 
-	int use();
+	void use(Being b);
 	std::string getDesc() const;
 
 protected:

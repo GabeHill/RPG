@@ -9,14 +9,17 @@
 #include "../loot/Loot.h"
 #include "../loot/Weapon.h"
 
-Weapon::Weapon(std::string t) :
-		Loot() {
-	title = t;
+Weapon::Weapon(WeaponType t, int min, int max) :
+		Loot(WEAPON, (rand() % 100) + 1) {
+	type = t;
+	damageMin = min;
+	damageMax = max;
 }
 
 int Weapon::getDamage() const {
-	return 0;
+	return (rand() % (damageMax = damageMin)) + damageMin;
 }
 std::string Weapon::toString() const {
-	return "";
+	return type + ", Min. Damage: " + damageMin + ", Max. Damamge: " + damageMax
+			+ ".";
 }

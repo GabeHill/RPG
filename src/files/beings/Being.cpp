@@ -5,7 +5,7 @@
  *      Author: owner
  */
 
-#include "../../headers/livingThings/Being.h"
+#include "../headers/livingThings/Being.h"
 
 Being::Being(std::string n) :
 		name(n) {

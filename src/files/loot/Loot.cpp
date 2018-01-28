@@ -5,25 +5,30 @@
  *      Author: owner
  */
 #include <string>
+#include <cstdlib>
+#include <ctime>
 
 #include "../loot/Loot.h"
 
-Loot::Loot() {
+int r = rand();
 
+Loot::Loot(GenericLoot g) {
+	srand(time(NULL));
+
+	name = g;
+	type = GENERIC;
+	value = (rand() % 25) + 1;
 }
 Loot::Loot(LootType t, int val) {
-
+	name = t;
+	value = val;
+	type = t;
 }
 
-std::string Loot::getName() const {
-	return "";
-}
 int Loot::getValue() const {
-	return 0;
+	return value;
 }
-Loot::LootType Loot::getType() const {
-	return SIMPLE;
-}
-std::string Loot::toString() const {
-	return "";
+
+std::string Loot::getDesc() const {
+	return type + ", " + name + ", " + getValue() + " gold.";
 }

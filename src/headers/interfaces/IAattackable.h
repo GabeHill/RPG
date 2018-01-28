@@ -18,8 +18,8 @@
  */
 class IAttackable {
 public:
-	virtual int attack()=0;
-	virtual int defend()=0;
+	virtual int attack() const=0;
+	virtual void takeDmg(int dmg)=0;
 
 	void setEquipWeapon(Weapon w);
 	void setEquipArmor(Armor w);

@@ -11,21 +11,27 @@
 #include "../interfaces/IUsable.h"
 #include "../loot/Loot.h"
 
-class Berry: public IUsable, Loot {
+class Berry: public Loot, IUsable {
 
 	enum BerryType {
-		NIGHTSHADE, BLUEBERRY, RASBERRY, JUNIPER, YEW, CRABAPPLE
+		NIGHTSHADE = "Nightshade",
+		BLUEBERRY = "Blueberry",
+		RASBERRY = "Rasberry",
+		JUNIPER = "Juniper",
+		YEW = "Yew",
+		CRABAPPLE = "Crabapple"
 	};
 
 public:
+	const BerryType type;
+
 	Berry(BerryType t);
 
-	int use();
+	void use(Being b);
 	std::string getDesc() const;
 
 protected:
 private:
-	const BerryType type;
 
 };
 

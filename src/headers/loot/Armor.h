@@ -11,20 +11,28 @@
 #include "Loot.h"
 
 class Armor: public Loot {
-public:
-	Armor(std::string t);
 
-	int getAgilityMod() const;
-	int getDefense() const;
-	int getRating() const;
+	enum ArmorPiece {
+		HELMET = "helmet",
+		CHESTPLATE = "chestplate",
+		GAUNTLETS = "gauntlets",
+		PAULDRONS = "pauldrons",
+		BOOTS = "boots"
+	};
+
+public:
+	const ArmorPiece piece;
+	const int defense;
+	const int rating;
+	const int agilityMod;
+
+	Armor(ArmorPiece p, int a, int d, int r);
+
 	std::string toString() const;
 
 protected:
 private:
-	const std::string title;
-	const int defense;
-	const int rating;
-	const int agilityMod;
+
 };
 
 #endif /* HEADERS_LOOT_ARMOR_H_ */

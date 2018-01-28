@@ -9,20 +9,15 @@
 #include "../loot/Loot.h"
 #include "../loot/Armor.h"
 
-Armor::Armor(std::string t) :
-		Loot() {
-	title = t;
+Armor::Armor(ArmorPiece p, int a, int d, int r) :
+		Loot(ARMOR, (rand() % 100) + 1) {
+	piece = p;
+	agilityMod = a;
+	defense = d;
+	rating = r;
 }
 
-int Armor::getAgilityMod() const {
-	return 0;
-}
-int Armor::getDefense() const {
-	return 0;
-}
-int Armor::getRating() const {
-	return 0;
-}
 std::string Armor::toString() const {
-	return "";
+	return piece + ", " + agilityMod + " less agility, " + defense
+			+ " defense, " + rating + " rating.";
 }

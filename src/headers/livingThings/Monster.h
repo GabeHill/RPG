@@ -14,15 +14,25 @@
 class Monster: public Being, IAttackable {
 
 	enum MonsterType {
-		ORC, DRAGON, GOBLIN, KOBOLD, TROLL, GIANT
+		ORC = "orc",
+		DRAGON = "dragon",
+		GOBLIN = "goblin",
+		KOBOLD = "kobold",
+		TROLL = "troll",
+		GIANT = "giant"
 	};
 
 public:
-	const bool isBoss;
+	const bool boss;
 	const MonsterType type;
 
 	Monster(int i, int s, int d, std::string n, MonsterType t, bool isBoss);
 	Monster(int i, int s, int d, MonsterType t);
+
+	int attack() const;
+	void takeDmg(int dmg);
+
+	std::string toString() const;
 
 protected:
 private:

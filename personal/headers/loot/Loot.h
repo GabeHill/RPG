@@ -11,7 +11,7 @@
 class Loot {
 
 	enum LootType {
-		ARMOR, CONSUMABLE, WEAPON, SIMPLE,
+		ARMOR, CONSUMABLE, WEAPON, GENERIC,
 	};
 
 	enum GenericLoot {

@@ -10,12 +10,15 @@
 
 #include <string>
 
+#include "Being.h"
+#include "Loot.h"
+
 /**
  * class not to be instantiated. used for interface purposes.
  */
-class IUsable {
+class IUsable: public Loot {
 public:
-	virtual int use()=0;
+	virtual void use(Being b)=0;
 	virtual std::string getDesc() const=0;
 
 	virtual ~IUsable();
