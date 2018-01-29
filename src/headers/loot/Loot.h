@@ -7,31 +7,30 @@
 
 #ifndef HEADERS_LOOT_LOOT_H_
 #define HEADERS_LOOT_LOOT_H_
-
 class Loot {
 
+public:
+
 	enum LootType {
-		ARMOR = "Armor",
-		CONSUMABLE = "Consumable",
-		WEAPON = "Weapon",
-		GENERIC = "Generic",
+		ARMOR/* = "Armor"*/,
+		CONSUMABLE /*= "Consumable"*/,
+		WEAPON /*= "Weapon"*/,
+		GENERIC /*= "Generic"*/,
 	};
 
 	enum GenericLoot {
-		PELT = "pelt",
-		CHAIR = "chair",
-		POT = "pot",
-		RUG = "rug",
-		BUCKET = "bucket",
-		HAT = "hat",
-		CLOTH = "cloth"
+		PELT /*= "pelt"*/,
+		CHAIR /*= "chair"*/,
+		POT /*= "pot"*/,
+		RUG /*= "rug"*/,
+		BUCKET /*= "bucket"*/,
+		HAT /*= "hat"*/,
+		CLOTH /*= "cloth"*/
 	};
 
-public:
-	const std::string name;
-	const LootType type;
-
 	Loot(GenericLoot g);
+	Loot(int n);
+
 	Loot(LootType t, int val);
 
 	int getValue() const;
@@ -39,6 +38,8 @@ public:
 
 protected:
 private:
+	std::string name;
+	LootType type;
 
 	int value;
 };

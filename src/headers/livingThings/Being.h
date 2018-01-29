@@ -13,7 +13,6 @@
 class Being {
 
 public:
-	const std::string name;
 
 	void changeIntelligence(int changeBy);
 	void changeStrength(int changeBy);
@@ -35,6 +34,7 @@ public:
 	int getMaxMana() const;
 	int getCurrentMana() const;
 	int getArmorClass() const;
+	std::string getName() const;
 
 	std::string toString() const;
 
@@ -49,6 +49,8 @@ protected:
 
 private:
 private:
+	std::string name;
+
 	void setModifiers();
 	int setMod(int stat) const;
 	int setMana() const;

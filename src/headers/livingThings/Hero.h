@@ -14,21 +14,21 @@
 class Hero: public Being, IAttackable {
 
 	enum HeroRace {
-		DRAGONBORN = "dragonborn",
-		TAXABI = "taxabi",
-		ELF = "elf",
-		HALFLING = "halfling",
-		TIEFLING = "tiefling",
-		HUMAN = "human",
+		DRAGONBORN /*= "dragonborn"*/,
+		TAXABI /*= "taxabi"*/,
+		ELF /*= "elf"*/,
+		HALFLING /*= "halfling"*/,
+		TIEFLING /*= "tiefling"*/,
+		HUMAN /*= "human"*/
 	};
 	enum HeroClass {
-		ROUGE = "rouge",
-		RANGER = "ranger",
-		WIZARD = "wizard",
-		FIGHTER = "fighter",
-		BARBARIAN = "barbarian",
-		CLERIC = "cleric",
-		MONK = "monk"
+		ROUGE /*= "rouge"*/,
+		RANGER /*= "ranger"*/,
+		WIZARD /*= "wizard"*/,
+		FIGHTER/*= "fighter"*/,
+		BARBARIAN/* = "barbarian"*/,
+		CLERIC /*= "cleric"*/,
+		MONK /*= "monk"*/
 	};
 
 public:

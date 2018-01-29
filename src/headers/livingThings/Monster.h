@@ -12,17 +12,16 @@
 #include "../headers/interfaces/IAattackable.h"
 
 class Monster: public Being, IAttackable {
-
+public:
 	enum MonsterType {
-		ORC = "orc",
-		DRAGON = "dragon",
-		GOBLIN = "goblin",
-		KOBOLD = "kobold",
-		TROLL = "troll",
-		GIANT = "giant"
+		ORC /*= "orc"*/,
+		DRAGON /*= "dragon"*/,
+		GOBLIN /*= "goblin"*/,
+		KOBOLD /*= "kobold"*/,
+		TROLL /*= "troll"*/,
+		GIANT /*= "giant"*/
 	};
 
-public:
 	const bool boss;
 	const MonsterType type;
 

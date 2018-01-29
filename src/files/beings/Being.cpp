@@ -107,6 +107,9 @@ int Being::getCurrentMana() const {
 int Being::getArmorClass() const {
 	return armorClass;
 }
+std::string Being::getName() const {
+	return name;
+}
 
 std::string Being::toString() const {
 	return "Current Health: " + getCurrentHealth() + ", Current Mana:"

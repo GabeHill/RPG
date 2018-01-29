@@ -4,19 +4,44 @@
  *  Created on: Jan 26, 2018
  *      Author: owner
  */
-
+#include <cstdint>
 #include <climits>
 #include <cstdlib>
 #include <iostream>
 #include <string>
 #include <vector>
 
-#include "../../headers/consumables/Berry.h"
-#include "../../headers/consumables/HealthPot.h"
-#include "../../headers/consumables/ManaPot.h"
-#include "../../headers/livingThings/Monster.h"
+#include "../headers/livingThings/Being.h"
+#include "../src/headers/consumables/Berry.h"
+#include "../headers/consumables/HealthPot.h"
+#include "../headers/consumables/ManaPot.h"
+#include "../headers/livingThings/Monster.h"
 
 std::vector<Loot> loots;
+
+int getNumInput() {
+
+	printf("How many loots to generate? 1-%d", INTMAX_MAX);
+
+	// std::cout << "How many loots to generate? 1-" + std::to_string(INT_MAX)
+	// 		<< std::endl;
+
+	int in;
+
+	while (true) {
+		try {
+			std::cin >> in;
+
+			if (in < 1 || in > INTMAX_MAX) {
+				throw "error";
+			}
+
+			return in;
+		} catch (...) {
+			std::cout << "Invalid number. Try again." << std::endl;
+		}
+	}
+}
 
 void run() {
 	int selection;
@@ -24,9 +49,8 @@ void run() {
 	do {
 
 		std::cout
-				<< "0) exit\n" + "1) Generate one loot\n"
-						+ "2) Generate some loots\n" + "3) Generate n loots\n"
-						+ "4) Demonstrate consumable\n" << std::endl;
+				<< "0) exit\n1) Generate one loot\n2) Generate some loots\n3) Generate n loots\n4) Demonstrate consumable\n"
+				<< std::endl;
 
 		selection = getNumInput();
 		switch (selection) {
@@ -91,7 +115,7 @@ Monster genMonster(Monster::MonsterType t) {
 	return NULL;
 }
 
-Loot::LootType genLootType() {
+Loot::LootType genType() {
 	int r = rand() % 4;
 	switch (r) {
 	case 0:
@@ -107,7 +131,7 @@ Loot::LootType genLootType() {
 	}
 }
 
-IUsable genConsumable() {
+Loot genConsumable() {
 	int r = rand() % 3;
 
 	switch (r) {
@@ -118,33 +142,13 @@ IUsable genConsumable() {
 		return ManaPot();
 		break;
 	case 2:
-		return Berry(rand % 6);
+		return Berry(rand() % 6);
 		break;
 	default:
 		break;
 	}
 
 	return NULL;
-}
-
-int getNumInput() {
-	std::cout << "How many loots to generate? 1-" + std::to_string(INT_MAX)
-			<< std::endl;
-
-	int in;
-	std::string s;
-
-	while (true) {
-		std::getline(std::cin, s);
-
-		std::stringstream streem(s);
-
-		if (streem >> in && in > 0 && in < INT_MAX) {
-			break;
-		}
-		std::cout << "Invalid number. Try again." << std::endl;
-	}
-	return in;
 }
 
 int main() {

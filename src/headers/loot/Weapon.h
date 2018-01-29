@@ -17,17 +17,19 @@ class Weapon: public Loot {
 	};
 
 public:
-	const WeaponType type;
-	const int damageMin;
-	const int damageMax;
 
 	Weapon(WeaponType t, int min, int max);
 
+	WeaponType weaponType() const;
 	int getDamage() const;
+	int getDamageMin() const;
+	int getDamageMax() const;
 	std::string toString() const;
 protected:
 private:
-
+	WeaponType type;
+	int damageMin;
+	int damageMax;
 };
 
 #endif

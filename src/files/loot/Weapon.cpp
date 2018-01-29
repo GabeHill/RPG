@@ -17,9 +17,20 @@ Weapon::Weapon(WeaponType t, int min, int max) :
 }
 
 int Weapon::getDamage() const {
-	return (rand() % (damageMax = damageMin)) + damageMin;
+	int max=getDamageMax();
+	int min=getDamageMin();
+	return (rand() % ( max=min )) +min;
+}
+Weapon::WeaponType Weapon::weaponType()const{
+	return type;
+}
+int Weapon::getDamageMin()const{
+	return damageMin;
+}
+int Weapon::getDamageMax()const{
+	return damageMax;
 }
 std::string Weapon::toString() const {
-	return type + ", Min. Damage: " + damageMin + ", Max. Damamge: " + damageMax
+	return type + ", Min. Damage: " + std::to_string(damageMin) + ", Max. Damamge: " + std::to_string(damageMax)
 			+ ".";
 }

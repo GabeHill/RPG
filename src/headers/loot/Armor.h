@@ -13,26 +13,29 @@
 class Armor: public Loot {
 
 	enum ArmorPiece {
-		HELMET = "helmet",
-		CHESTPLATE = "chestplate",
-		GAUNTLETS = "gauntlets",
-		PAULDRONS = "pauldrons",
-		BOOTS = "boots"
+		HELMET /*= "helmet"*/,
+		CHESTPLATE /*= "chestplate"*/,
+		GAUNTLETS /*= "gauntlets"*/,
+		PAULDRONS /*= "pauldrons"*/,
+		BOOTS /*= "boots"*/
 	};
 
 public:
-	const ArmorPiece piece;
-	const int defense;
-	const int rating;
-	const int agilityMod;
 
 	Armor(ArmorPiece p, int a, int d, int r);
 
+	ArmorPiece getPiece() const;
+	int getDefense() const;
+	int getRating() const;
+	int getAgilityMod() const;
 	std::string toString() const;
 
 protected:
 private:
-
+	ArmorPiece piece;
+	int defense;
+	int rating;
+	int agilityMod;
 };
 
 #endif /* HEADERS_LOOT_ARMOR_H_ */

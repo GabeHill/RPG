@@ -6,18 +6,31 @@
  */
 #include <string>
 
-#include "../loot/Loot.h"
-#include "../loot/Armor.h"
+#include "../headers/loot/Armor.h"
+#include "../headers/loot/Loot.h"
 
 Armor::Armor(ArmorPiece p, int a, int d, int r) :
-		Loot(ARMOR, (rand() % 100) + 1) {
+		Loot(ARMOR, (rand() % ((d+r)-a)) + 20) {
 	piece = p;
 	agilityMod = a;
 	defense = d;
 	rating = r;
 }
 
+Armor::ArmorPiece Armor::getPiece()const{
+	return piece;
+}
+int Armor::getDefense()const{
+	return defense;
+}
+int Armor::getRating()const{
+	return rating;
+}
+int Armor::getAgilityMod()const{
+	return agilityMod;
+}
+
 std::string Armor::toString() const {
-	return piece + ", " + agilityMod + " less agility, " + defense
-			+ " defense, " + rating + " rating.";
+	return piece + ", " +std::to_string( agilityMod )+ " less agility, " +std::to_string( defense)
+			+ " defense, " + std::to_string(rating) + " rating.";
 }
