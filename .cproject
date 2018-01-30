@@ -42,41 +42,9 @@
 							</tool>
 						</toolChain>
 					</folderInfo>
-					<folderInfo id="cdt.managedbuild.config.gnu.cross.exe.debug.232478887.1304521523" name="/" resourcePath="src/headers">
-						<toolChain id="cdt.managedbuild.toolchain.gnu.cross.exe.debug.826972821" name="Cross GCC" superClass="cdt.managedbuild.toolchain.gnu.cross.exe.debug" unusedChildren="">
-							<targetPlatform archList="all" binaryParser="org.eclipse.cdt.core.ELF" id="cdt.managedbuild.targetPlatform.gnu.cross" isAbstract="false" osList="all" superClass="cdt.managedbuild.targetPlatform.gnu.cross"/>
-							<tool id="cdt.managedbuild.tool.gnu.cross.c.compiler.2125590883" name="Cross GCC Compiler" superClass="cdt.managedbuild.tool.gnu.cross.c.compiler.1598204940">
-								<option id="gnu.c.compiler.option.include.paths.619436713" name="Include paths (-I)" superClass="gnu.c.compiler.option.include.paths" useByScannerDiscovery="false" valueType="includePath">
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}}&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/src/headers/loot}&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/src/headers/livingThings}&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/src/headers/interfaces}&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/src/headers/consumables}&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/src/headers}&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/RPG/src}&quot;"/>
-								</option>
-								<inputType id="cdt.managedbuild.tool.gnu.c.compiler.input.653552328" superClass="cdt.managedbuild.tool.gnu.c.compiler.input"/>
-							</tool>
-							<tool id="cdt.managedbuild.tool.gnu.cross.cpp.compiler.720182663" name="Cross G++ Compiler" superClass="cdt.managedbuild.tool.gnu.cross.cpp.compiler.108319154">
-								<option id="gnu.cpp.compiler.option.include.paths.1923705817" name="Include paths (-I)" superClass="gnu.cpp.compiler.option.include.paths" valueType="includePath">
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/RPG/src}&quot;"/>
-								</option>
-								<inputType id="cdt.managedbuild.tool.gnu.cpp.compiler.input.354343257" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.input"/>
-							</tool>
-							<tool id="cdt.managedbuild.tool.gnu.cross.c.linker.514221387" name="Cross GCC Linker" superClass="cdt.managedbuild.tool.gnu.cross.c.linker.29246373"/>
-							<tool id="cdt.managedbuild.tool.gnu.cross.cpp.linker.1166044771" name="Cross G++ Linker" superClass="cdt.managedbuild.tool.gnu.cross.cpp.linker.301045477"/>
-							<tool id="cdt.managedbuild.tool.gnu.cross.archiver.1275602940" name="Cross GCC Archiver" superClass="cdt.managedbuild.tool.gnu.cross.archiver.861001426"/>
-							<tool id="cdt.managedbuild.tool.gnu.cross.assembler.1011969075" name="Cross GCC Assembler" superClass="cdt.managedbuild.tool.gnu.cross.assembler.1301307684">
-								<option id="gnu.both.asm.option.include.paths.101993827" superClass="gnu.both.asm.option.include.paths" valueType="includePath">
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/RPG/src}&quot;"/>
-								</option>
-								<inputType id="cdt.managedbuild.tool.gnu.assembler.input.1486335204" superClass="cdt.managedbuild.tool.gnu.assembler.input"/>
-							</tool>
-						</toolChain>
-					</folderInfo>
 					<sourceEntries>
-						<entry excluding="storage|personal|src" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
-						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="src"/>
+						<entry excluding="personal|storage|src|iHateMyself" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
+						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="iHateMyself"/>
 					</sourceEntries>
 				</configuration>
 			</storageModule>
@@ -123,19 +91,9 @@
 							</tool>
 						</toolChain>
 					</folderInfo>
-					<folderInfo id="cdt.managedbuild.config.gnu.cross.exe.release.1246131061.1964921153" name="/" resourcePath="src/headers">
-						<toolChain id="cdt.managedbuild.toolchain.gnu.cross.exe.release.55165511" name="Cross GCC" superClass="cdt.managedbuild.toolchain.gnu.cross.exe.release" unusedChildren="">
-							<tool id="cdt.managedbuild.tool.gnu.cross.c.compiler.91771916" name="Cross GCC Compiler" superClass="cdt.managedbuild.tool.gnu.cross.c.compiler.1941065156"/>
-							<tool id="cdt.managedbuild.tool.gnu.cross.cpp.compiler.2104917555" name="Cross G++ Compiler" superClass="cdt.managedbuild.tool.gnu.cross.cpp.compiler.2053248047"/>
-							<tool id="cdt.managedbuild.tool.gnu.cross.c.linker.1268281692" name="Cross GCC Linker" superClass="cdt.managedbuild.tool.gnu.cross.c.linker.185436820"/>
-							<tool id="cdt.managedbuild.tool.gnu.cross.cpp.linker.1572767196" name="Cross G++ Linker" superClass="cdt.managedbuild.tool.gnu.cross.cpp.linker.611818516"/>
-							<tool id="cdt.managedbuild.tool.gnu.cross.archiver.1916655509" name="Cross GCC Archiver" superClass="cdt.managedbuild.tool.gnu.cross.archiver.392804690"/>
-							<tool id="cdt.managedbuild.tool.gnu.cross.assembler.958487623" name="Cross GCC Assembler" superClass="cdt.managedbuild.tool.gnu.cross.assembler.723097637"/>
-						</toolChain>
-					</folderInfo>
 					<sourceEntries>
-						<entry excluding="storage|personal|src" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
-						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="src"/>
+						<entry excluding="personal|storage|src|iHateMyself" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
+						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="iHateMyself"/>
 					</sourceEntries>
 				</configuration>
 			</storageModule>

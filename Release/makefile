@@ -8,7 +8,10 @@ RM := rm -rf
 
 # All of the sources participating in the build are defined here
 -include sources.mk
--include iHateMyself/subdir.mk
+-include src/files/loot/subdir.mk
+-include src/files/logic/subdir.mk
+-include src/files/consumables/subdir.mk
+-include src/files/beings/subdir.mk
 -include subdir.mk
 -include objects.mk
 

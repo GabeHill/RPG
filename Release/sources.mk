@@ -23,5 +23,8 @@ CPP_DEPS :=
 
 # Every subdirectory with source files must be described here
 SUBDIRS := \
-iHateMyself \
+src/files/beings \
+src/files/consumables \
+src/files/logic \
+src/files/loot \
 
