@@ -20,6 +20,9 @@ class IAttackable {
 public:
 	virtual int attack() const=0;
 	virtual void takeDmg(int dmg)=0;
+	virtual std::string getDesc() const=0;
+	virtual int getCurrentHealth() const=0;
+
 
 	void setEquipWeapon(Weapon w);
 	void setEquipArmor(Armor w);

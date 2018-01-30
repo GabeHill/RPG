@@ -11,7 +11,7 @@
 #include "../iHateMyself/Being.h"
 #include "IAttackable.h"
 
-class Hero: public Being, IAttackable {
+class Hero: public Being, public IAttackable {
 public:
 
 	enum HeroRace {
@@ -27,8 +27,8 @@ public:
 	void takeDmg(int dmg);
 	HeroRace getRace() const;
 	HeroClass getClass() const;
-	std::string getDesc() const;
-
+	std::string getDesc() const override;
+	int getCurrentHealth() const override;
 	~Hero() {
 	}
 protected:

@@ -17,10 +17,10 @@ int Monster::attack() const {
 	return getStrengthMod() * 2;
 }
 void Monster::takeDmg(int dmg) {
-	dmg -= (getStrengthMod() > getDexMod() ? getStrengthMod() : getDexMod());
-	if (dmg < 0) {
-		dmg = 0;
-	}
+//	dmg -= (getStrengthMod() > getDexMod() ? getStrengthMod() : getDexMod());
+//	if (dmg < 0) {
+//		dmg = 0;
+//	}
 	changeHealth(dmg);
 }
 bool Monster::isBoss() const {
@@ -34,28 +34,6 @@ std::string Monster::getDesc() const {
 			+ " a boss.";
 	return f;
 }
-
-/*
-std::ostream& operator<<(std::ostream& out, Monster::MonsterType e) {
-	switch (e) {
-	case Monster::ORC:
-		out << "orc";
-		break;
-	case Monster::DRAGON:
-		out << "dragon";
-		break;
-	case Monster::GOBLIN:
-		out << "goblin";
-		break;
-	case Monster::KOBOLD:
-		out << "kobold";
-		break;
-	case Monster::TROLL:
-		out << "troll";
-		break;
-	case Monster::GIANT:
-		out << "giant";
-		break;
-	}
-	return out;
- }*/
+int Monster::getCurrentHealth() const {
+	return currentHealth;
+}

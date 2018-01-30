@@ -152,8 +152,16 @@ void useOn(Being* b, IConsumable* l) {
 	std::cout << b->getDesc() << std::endl;
 }
 
-void attack(Being* b1, Being* b2) {
-//TODO
+void attack(IAttackable* b1, IAttackable* b2) {
+	std::cout << b1->getDesc() + " " + std::to_string(b1->getCurrentHealth())
+			<< std::endl;
+	std::cout << b2->getDesc() + " " + std::to_string(b2->getCurrentHealth())
+			<< std::endl;
+	b1->takeDmg(b2->attack());
+	std::cout << b1->getDesc() + " " + std::to_string(b1->getCurrentHealth())
+			<< std::endl;
+	std::cout << b2->getDesc() + " " + std::to_string(b2->getCurrentHealth())
+			<< std::endl;
 }
 
 
@@ -189,7 +197,7 @@ void run() {
 	Loot::LootType t;
 	do {
 		std::cout
-				<< "0) exit\n1) Generate one loot\n2) Generate some loots\n3) Generate n loots\n4) Demonstrate consumable"
+				<< "0) exit\n1) Generate one loot\n2) Generate some loots\n3) Generate n loots\n4) Demonstrate"
 				<< std::endl;
 
 		selection = getNumInput(0);

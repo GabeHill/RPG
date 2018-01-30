@@ -11,7 +11,7 @@
 #include "../iHateMyself/Being.h"
 #include "IAttackable.h"
 
-class Monster: public Being, IAttackable {
+class Monster: public Being, public IAttackable {
 public:
 	enum MonsterType {
 		ORC, DRAGON, GOBLIN, KOBOLD, TROLL, GIANT
@@ -23,8 +23,8 @@ public:
 	void takeDmg(int dmg);
 	bool isBoss() const;
 	MonsterType getType() const;
-	std::string getDesc() const;
-
+	std::string getDesc() const override;
+	int getCurrentHealth() const override;
 	~Monster() {
 	}
 
