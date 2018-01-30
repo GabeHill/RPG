@@ -7,19 +7,23 @@
 
 #include "../iHateMyself/Being.h"
 
-Being::Being(std::string n) :
-		name(n) {
+Being::Being(std::string n) {
+	name = n;
 	changeStrength(1);
 	changeDexterity(1);
 	changeIntelligence(1);
 	setModifiers();
+	setMaxHealth(1, true);
+	setMaxMana(0, true);
 }
-Being::Being(int i, int s, int d, std::string n) :
-		name(n) {
+Being::Being(int i, int s, int d, std::string n) {
+	name = n;
 	changeStrength(s);
 	changeDexterity(d);
 	changeIntelligence(i);
 	setModifiers();
+	setMaxHealth(10 * s, true);
+	setMaxMana(5 * i, true);
 }
 Being::Being(int i, int s, int d) {
 	name = "None";
@@ -27,6 +31,8 @@ Being::Being(int i, int s, int d) {
 	changeDexterity(d);
 	changeIntelligence(i);
 	setModifiers();
+	setMaxHealth(10 * s, true);
+	setMaxMana(5 * i, true);
 }
 
 void Being::changeIntelligence(int changeBy) {

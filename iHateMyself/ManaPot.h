@@ -18,7 +18,7 @@ public:
 
 	ManaPot();
 
-	void use(Being b);
+	void use(Being* & b) override;
 	std::string getDesc() const;
 
 protected:

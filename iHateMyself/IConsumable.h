@@ -10,16 +10,15 @@
 #include "Being.h"
 #include "Loot.h"
 
-class IConsumable: public Loot {
+class IConsumable {
 public:
-	IConsumable() :
-			Loot(CONSUMABLE, rand() % 24 + 1) {
+	virtual void use(Being * & b) =0;
+
+	virtual std::string getDesc() const=0;
+
+	virtual ~IConsumable() {
 
 	}
-	void use(Being b) {
-
-	}
-
 protected:
 private:
 

@@ -12,8 +12,8 @@ ManaPot::ManaPot() :
 	manaRestore = rand() % 20;
 }
 
-void ManaPot::use(Being b) {
-	b.changeMana(manaRestore);
+void ManaPot::use(Being* & b) {
+	b->changeMana(manaRestore);
 	manaRestore = 0;
 }
 

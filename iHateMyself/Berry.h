@@ -22,7 +22,7 @@ public:
 
 	Berry(BerryType t);
 
-	void use(Being b);
+	void use(Being*& b) override;
 	BerryType getType() const;
 	std::string getDesc() const;
 

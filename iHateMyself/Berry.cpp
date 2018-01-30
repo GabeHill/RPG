@@ -7,30 +7,29 @@
 #include "Berry.h"
 
 Berry::Berry(Berry::BerryType t) :
-		Loot(CONSUMABLE, 1), IConsumable() {
+		Loot(CONSUMABLE, 1) {
 	type = t;
 }
 
-void Berry::use(Being b) {
-//TODO how to implement this
+void Berry::use(Being* & b) {
 	switch (type) {
 	case NIGHTSHADE:
-		b.changeHealth(-1000);
+		b->changeHealth(-1000);
 		break;
 	case BLUEBERRY:
-		b.changeHealth(2);
+		b->changeHealth(2);
 		break;
 	case RASBERRY:
-		b.changeHealth(2);
+		b->changeHealth(2);
 		break;
 	case JUNIPER:
-		b.changeHealth(-2);
+		b->changeHealth(-2);
 		break;
 	case YEW:
-		b.changeHealth(-2);
+		b->changeHealth(-2);
 		break;
 	case CRABAPPLE:
-		b.changeHealth(-2);
+		b->changeHealth(-2);
 		break;
 	default:
 		break;
@@ -44,27 +43,4 @@ std::string Berry::getDesc() const {
 	return std::to_string(type);
 }
 
-/*
-std::ostream& operator<<(std::ostream& out, Berry::BerryType e) {
-	switch (e) {
-	case Berry::NIGHTSHADE:
-		out << "nightshade";
-		break;
-	case Berry::BLUEBERRY:
-		out << "blueberry";
-		break;
-	case Berry::RASBERRY:
-		out << "rasberry";
-		break;
-	case Berry::JUNIPER:
-		out << "juniper";
-		break;
-	case Berry::YEW:
-		out << "yew";
-		break;
-	case Berry::CRABAPPLE:
-		out << "crabapple";
-		break;
-	}
-	return out;
- }*/
+

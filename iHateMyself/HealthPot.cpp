@@ -11,8 +11,8 @@ HealthPot::HealthPot() :
 	healAmt = 35;
 }
 
-void HealthPot::use(Being b) {
-	b.changeHealth(healAmt);
+void HealthPot::use(Being* & b) {
+	b->changeHealth(healAmt);
 	healAmt = 0;
 }
 std::string HealthPot::getDesc() const {
