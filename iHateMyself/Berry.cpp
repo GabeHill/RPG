@@ -11,36 +11,36 @@ Berry::Berry(Berry::BerryType t) :
 	type = t;
 }
 
-void Berry::use(Being* & b) {
+void Berry::Use(Being* & b) {
 	switch (type) {
 	case NIGHTSHADE:
-		b->changeHealth(-1000);
+		b->ChangeHealth(-1000);
 		break;
 	case BLUEBERRY:
-		b->changeHealth(2);
+		b->ChangeHealth(2);
 		break;
 	case RASBERRY:
-		b->changeHealth(2);
+		b->ChangeHealth(2);
 		break;
 	case JUNIPER:
-		b->changeHealth(-2);
+		b->ChangeHealth(-2);
 		break;
 	case YEW:
-		b->changeHealth(-2);
+		b->ChangeHealth(-2);
 		break;
 	case CRABAPPLE:
-		b->changeHealth(-2);
+		b->ChangeHealth(-2);
 		break;
 	default:
 		break;
 	}
 }
 
-Berry::BerryType Berry::getType() const {
-	return type;
+std::string Berry::GetType() const {
+	return berryNames[type];
 }
-std::string Berry::getDesc() const {
-	return std::to_string(type);
+std::string Berry::GetDesc() const {
+	return GetType();
 }
 
 

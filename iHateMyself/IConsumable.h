@@ -12,9 +12,9 @@
 
 class IConsumable {
 public:
-	virtual void use(Being * & b) =0;
+	virtual void Use(Being * & b) =0;
 
-	virtual std::string getDesc() const=0;
+	virtual std::string GetDesc() const=0;
 
 	virtual ~IConsumable() {
 

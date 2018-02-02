@@ -8,6 +8,8 @@
 #ifndef HEADERS_HERO_H_
 #define HEADERS_HERO_H_
 
+#include <string>
+
 #include "../iHateMyself/Being.h"
 #include "IAttackable.h"
 
@@ -21,14 +23,20 @@ public:
 		ROUGE, RANGER, WIZARD, FIGHTER, BARBARIAN, CLERIC, MONK
 	};
 
+	std::array<std::string, 6> raceNames = { "dragonborn", "taxabi", "elf",
+			"halfling", "tiefling", "human" };
+	std::array<std::string, 7> classNames = { "rouge", "ranger", "wizard",
+			"fighter", "barbarian", "cleric", "monk" };
+
+
 	Hero(int i, int s, int d, std::string n, HeroRace r, HeroClass c);
 
-	int attack() const;
-	void takeDmg(int dmg);
-	HeroRace getRace() const;
-	HeroClass getClass() const;
-	std::string getDesc() const override;
-	int getCurrentHealth() const override;
+	int Attack() const;
+	void TakeDmg(int dmg);
+	std::string GetRace() const;
+	std::string GetClass() const;
+	std::string GetDesc() const override;
+	int GetCurrentHealth() const override;
 	~Hero() {
 	}
 protected:

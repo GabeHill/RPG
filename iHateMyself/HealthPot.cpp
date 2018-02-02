@@ -11,11 +11,11 @@ HealthPot::HealthPot() :
 	healAmt = 35;
 }
 
-void HealthPot::use(Being* & b) {
-	b->changeHealth(healAmt);
+void HealthPot::Use(Being* & b) {
+	b->ChangeHealth(healAmt);
 	healAmt = 0;
 }
-std::string HealthPot::getDesc() const {
+std::string HealthPot::GetDesc() const {
 	std::string f = "Health pot; heals " + std::to_string(healAmt) + " points.";
 	return f;
 }

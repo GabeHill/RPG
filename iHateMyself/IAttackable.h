@@ -18,21 +18,21 @@
  */
 class IAttackable {
 public:
-	virtual int attack() const=0;
-	virtual void takeDmg(int dmg)=0;
-	virtual std::string getDesc() const=0;
-	virtual int getCurrentHealth() const=0;
+	virtual int Attack() const=0;
+	virtual void TakeDmg(int dmg)=0;
+	virtual std::string GetDesc() const=0;
+	virtual int GetCurrentHealth() const=0;
 
 
-	void setEquipWeapon(Weapon w);
-	void setEquipArmor(Armor w);
-	void storeWeapon(Weapon w);
-	void storeArmor(Armor w);
+	void SetEquipWeapon(Weapon w);
+	void SetEquipArmor(Armor w);
+	void StoreWeapon(Weapon w);
+	void StoreArmor(Armor w);
 
-	Weapon getEquipWeapon() const;
-	Armor getEquipArmor() const;
-	std::vector<Weapon> getStoredWeapons() const;
-	std::vector<Armor> getStoredArmor() const;
+	Weapon GetEquipWeapon() const;
+	Armor GetEquipArmor() const;
+	std::vector<Weapon> GetStoredWeapons() const;
+	std::vector<Armor> GetStoredArmor() const;
 
 	virtual ~IAttackable() {
 

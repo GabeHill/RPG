@@ -17,14 +17,17 @@ public:
 		HELMET, CHESTPLATE, GAUNTLETS, PAULDRONS, BOOTS
 	};
 
+	std::array<std::string, 5> pieceNames = { "helmet", "chestplate",
+			"gauntlets", "pauldrons", "boots" };
+
 	Armor();
 	Armor(ArmorPiece p, int a, int d, int r);
 
-	ArmorPiece getPiece() const;
-	int getDefense() const;
-	int getRating() const;
-	int getAgilityMod() const;
-	std::string getDesc() const;
+	std::string GetPiece() const;
+	int GetDefense() const;
+	int GetRating() const;
+	int GetAgilityMod() const;
+	std::string GetDesc() const;
 
 protected:
 private:

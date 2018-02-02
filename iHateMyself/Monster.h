@@ -17,14 +17,17 @@ public:
 		ORC, DRAGON, GOBLIN, KOBOLD, TROLL, GIANT
 	};
 
+	std::array<std::string, 6> typeNames = { "orc", "dragon", "goblin",
+			"kobold", "troll", "giant" };
+
 	Monster(int i, int s, int d, std::string n, MonsterType t, bool isBoss);
 
-	int attack() const;
-	void takeDmg(int dmg);
-	bool isBoss() const;
-	MonsterType getType() const;
-	std::string getDesc() const override;
-	int getCurrentHealth() const override;
+	int Attack() const;
+	void TakeDmg(int dmg);
+	bool IsBoss() const;
+	std::string GetType() const;
+	std::string GetDesc() const override;
+	int GetCurrentHealth() const override;
 	~Monster() {
 	}
 

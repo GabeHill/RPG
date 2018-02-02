@@ -13,27 +13,27 @@ Monster::Monster(int i, int s, int d, std::string n, MonsterType t, bool isBoss)
 	boss = isBoss;
 }
 
-int Monster::attack() const {
-	return getStrengthMod() * 2;
+int Monster::Attack() const {
+	return GetStrengthMod() * 2;
 }
-void Monster::takeDmg(int dmg) {
+void Monster::TakeDmg(int dmg) {
 //	dmg -= (getStrengthMod() > getDexMod() ? getStrengthMod() : getDexMod());
 //	if (dmg < 0) {
 //		dmg = 0;
 //	}
-	changeHealth(dmg);
+	ChangeHealth(dmg);
 }
-bool Monster::isBoss() const {
+bool Monster::IsBoss() const {
 	return boss;
 }
-Monster::MonsterType Monster::getType() const {
-	return type;
+std::string Monster::GetType() const {
+	return typeNames[type];
 }
-std::string Monster::getDesc() const {
-	std::string f = std::to_string(getType()) + ", is " + (boss ? "" : "not")
+std::string Monster::GetDesc() const {
+	std::string f = GetType() + ", is " + (boss ? "" : "not")
 			+ " a boss.";
 	return f;
 }
-int Monster::getCurrentHealth() const {
+int Monster::GetCurrentHealth() const {
 	return currentHealth;
 }

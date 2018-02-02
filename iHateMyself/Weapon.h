@@ -15,14 +15,18 @@ public:
 	enum WeaponType {
 		MACE, SWORD, BOW, DAGGER, AXE
 	};
+
+	std::array<std::string, 5> weaponNames = { "mace", "sword", "bow", "dagger",
+			"axe" };
+
 	Weapon();
 	Weapon(WeaponType t, int min, int max);
 
-	int getDamage() const;
-	WeaponType weaponType() const;
-	int getDamageMin() const;
-	int getDamageMax() const;
-	std::string getDesc() const;
+	int GetDamage() const;
+	std::string GetWeaponType() const;
+	int GetDamageMin() const;
+	int GetDamageMax() const;
+	std::string GetDesc() const;
 protected:
 private:
 	WeaponType typ;

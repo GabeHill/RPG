@@ -9,128 +9,128 @@
 
 Being::Being(std::string n) {
 	name = n;
-	changeStrength(1);
-	changeDexterity(1);
-	changeIntelligence(1);
-	setModifiers();
-	setMaxHealth(1, true);
-	setMaxMana(0, true);
+	ChangeStrength(1);
+	ChangeDexterity(1);
+	ChangeIntelligence(1);
+	SetModifiers();
+	SetMaxHealth(1, true);
+	SetMaxMana(0, true);
 }
 Being::Being(int i, int s, int d, std::string n) {
 	name = n;
-	changeStrength(s);
-	changeDexterity(d);
-	changeIntelligence(i);
-	setModifiers();
-	setMaxHealth(10 * s, true);
-	setMaxMana(5 * i, true);
+	ChangeStrength(s);
+	ChangeDexterity(d);
+	ChangeIntelligence(i);
+	SetModifiers();
+	SetMaxHealth(10 * s, true);
+	SetMaxMana(5 * i, true);
 }
 Being::Being(int i, int s, int d) {
 	name = "None";
-	changeStrength(s);
-	changeDexterity(d);
-	changeIntelligence(i);
-	setModifiers();
-	setMaxHealth(10 * s, true);
-	setMaxMana(5 * i, true);
+	ChangeStrength(s);
+	ChangeDexterity(d);
+	ChangeIntelligence(i);
+	SetModifiers();
+	SetMaxHealth(10 * s, true);
+	SetMaxMana(5 * i, true);
 }
 
-void Being::changeIntelligence(int changeBy) {
+void Being::ChangeIntelligence(int changeBy) {
 	intelligence += changeBy;
 	intelligence = intelligence > 30 ? 30 : intelligence;
 	intelligence = intelligence < 0 ? 0 : intelligence;
 	currentHealth = intelligence > 0 ? currentHealth : 0;
 }
-void Being::changeStrength(int changeBy) {
+void Being::ChangeStrength(int changeBy) {
 	strength += changeBy;
 	strength = strength > 30 ? 30 : strength;
 	strength = strength < 0 ? 0 : strength;
 	currentHealth = strength > 0 ? currentHealth : 0;
 }
-void Being::changeDexterity(int changeBy) {
+void Being::ChangeDexterity(int changeBy) {
 	dexterity += changeBy;
 	dexterity = dexterity > 30 ? 30 : dexterity;
 	dexterity = dexterity < 0 ? 0 : dexterity;
 	currentHealth = dexterity > 0 ? currentHealth : 0;
 }
 
-void Being::changeHealth(int changeBy) {
+void Being::ChangeHealth(int changeBy) {
 	currentHealth += changeBy;
 	currentHealth = currentHealth > maxHealth ? maxHealth : currentHealth;
 	currentHealth = currentHealth < 0 ? 0 : currentHealth;
 }
-void Being::changeMana(int changeBy) {
+void Being::ChangeMana(int changeBy) {
 	currentMana += changeBy;
 	currentMana = currentMana > maxMana ? maxMana : currentMana;
 	currentMana = currentMana < 0 ? 0 : currentMana;
 }
-void Being::changeArmor(int changeBy) {
+void Being::ChangeArmor(int changeBy) {
 	armorClass += changeBy;
 	armorClass = armorClass > 20 ? 20 : armorClass;
 	armorClass = armorClass < 0 ? 0 : armorClass;
 }
-void Being::setMaxHealth(int max, bool restoreAll) {
+void Being::SetMaxHealth(int max, bool restoreAll) {
 	maxHealth = max;
 	maxHealth = maxHealth < 0 ? 0 : maxHealth;
 	currentHealth = restoreAll ? maxHealth : currentHealth;
 }
-void Being::setMaxMana(int max, bool restoreAll) {
+void Being::SetMaxMana(int max, bool restoreAll) {
 	maxMana = max;
 	maxMana = maxMana < 0 ? 0 : maxMana;
 	currentMana = restoreAll ? maxMana : currentMana;
 }
 
-int Being::getIntelligence() const {
+int Being::GetIntelligence() const {
 	return intelligence;
 }
-int Being::getIntelMod() const {
+int Being::GetIntelMod() const {
 	return intelligenceMod;
 }
-int Being::getStrength() const {
+int Being::GetStrength() const {
 	return strength;
 }
-int Being::getStrengthMod() const {
+int Being::GetStrengthMod() const {
 	return strengthMod;
 }
-int Being::getDexterity() const {
+int Being::GetDexterity() const {
 	return dexterity;
 }
-int Being::getDexMod() const {
+int Being::GetDexMod() const {
 	return dexterityMod;
 }
-int Being::getMaxHealth() const {
+int Being::GetMaxHealth() const {
 	return maxHealth;
 }
-int Being::getCurrentHealth() const {
+int Being::GetCurrentHealth() const {
 	return currentHealth;
 }
-int Being::getMaxMana() const {
+int Being::GetMaxMana() const {
 	return maxMana;
 }
-int Being::getCurrentMana() const {
+int Being::GetCurrentMana() const {
 	return currentMana;
 }
-int Being::getArmorClass() const {
+int Being::GetArmorClass() const {
 	return armorClass;
 }
-std::string Being::getName() const {
+std::string Being::GetName() const {
 	return name;
 }
 
-std::string Being::getDesc() const {
-	std::string f = ("Current Health: " + std::to_string(getCurrentHealth())
-			+ ", Current Mana:" + std::to_string(getCurrentMana()));
+std::string Being::GetDesc() const {
+	std::string f = ("Current Health: " + std::to_string(GetCurrentHealth())
+			+ ", Current Mana:" + std::to_string(GetCurrentMana()));
 	return f;
 }
 
-void Being::setModifiers() {
-	intelligenceMod = setMod(getIntelligence());
-	strengthMod = setMod(getStrength());
-	dexterityMod = setMod(getDexterity());
-	maxHealth = setHealth();
-	maxMana = setMana();
+void Being::SetModifiers() {
+	intelligenceMod = SetMod(GetIntelligence());
+	strengthMod = SetMod(GetStrength());
+	dexterityMod = SetMod(GetDexterity());
+	maxHealth = SetHealth();
+	maxMana = SetMana();
 }
-int Being::setMod(int stat) const {
+int Being::SetMod(int stat) const {
 	int mod;
 	switch (stat) {
 	case 1:
@@ -200,11 +200,11 @@ int Being::setMod(int stat) const {
 	}
 	return mod;
 }
-int Being::setMana() const {
-	return (getIntelMod() + 8);
+int Being::SetMana() const {
+	return (GetIntelMod() + 8);
 
 }
-int Being::setHealth() const {
-	return (getStrengthMod() + 8);
+int Being::SetHealth() const {
+	return (GetStrengthMod() + 8);
 }
 

@@ -62,18 +62,18 @@ Loot::Loot(LootType t, int val) {
 	type = t;
 }
 
-std::string Loot::getName() const {
+std::string Loot::GetName() const {
 	return name;
 }
-Loot::LootType Loot::getType() const {
-	return type;
+std::string Loot::GetType() const {
+	return lootNames[type];
 }
-int Loot::getValue() const {
+int Loot::GetValue() const {
 	return value;
 }
 
-std::string Loot::getDesc() const {
-	return std::to_string(type) + ", " + std::to_string(getValue()) + " gold.";
+std::string Loot::GetDesc() const {
+	return GetType() + ", " + std::to_string(GetValue()) + " gold.";
 }
 
 /*

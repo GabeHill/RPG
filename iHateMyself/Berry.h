@@ -19,12 +19,14 @@ public:
 		NIGHTSHADE, BLUEBERRY, RASBERRY, JUNIPER, YEW, CRABAPPLE
 	};
 
+	std::array<std::string, 6> berryNames = { "nightshade", "blueberry",
+			"rasberry", "juniper", "yew", "crabapple" };
 
 	Berry(BerryType t);
 
-	void use(Being*& b) override;
-	BerryType getType() const;
-	std::string getDesc() const;
+	void Use(Being*& b) override;
+	std::string GetType() const;
+	std::string GetDesc() const;
 
 protected:
 private:

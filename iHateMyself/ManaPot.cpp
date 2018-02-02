@@ -12,12 +12,12 @@ ManaPot::ManaPot() :
 	manaRestore = rand() % 20;
 }
 
-void ManaPot::use(Being* & b) {
-	b->changeMana(manaRestore);
+void ManaPot::Use(Being* & b) {
+	b->ChangeMana(manaRestore);
 	manaRestore = 0;
 }
 
-std::string ManaPot::getDesc() const {
+std::string ManaPot::GetDesc() const {
 	std::string f = "Mana pot; restores " + std::to_string(manaRestore)
 			+ " mana.";
 	return f;

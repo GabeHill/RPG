@@ -21,15 +21,19 @@ public:
 		PELT, CHAIR, POT, RUG, BUCKET, HAT, CLOTH
 	};
 
+	std::array<std::string, 4> lootNames = { "armor", "consumable", "weapon",
+			"generic" };
+	std::array<std::string, 7> genericLootNames = { "pelt", "chair", "pot",
+			"rug", "bucket", "hat", "cloth" };
 
 	Loot(GenericLoot g);
 	Loot(int n);
 	Loot(LootType t, int val);
 
-	std::string getName() const;
-	int getValue() const;
-	LootType getType() const;
-	std::string getDesc() const;
+	std::string GetName() const;
+	int GetValue() const;
+	std::string GetType() const;
+	std::string GetDesc() const;
 protected:
 private:
 	std::string name;

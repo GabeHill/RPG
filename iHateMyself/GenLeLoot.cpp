@@ -4,7 +4,6 @@
  *  Created on: Jan 26, 2018
  *      Author: owner
  */
-#include <climits>
 #include <cstdlib>
 #include <iostream>
 #include <string>
@@ -14,34 +13,32 @@
 #include "../iHateMyself/Being.h"
 #include "../iHateMyself/Berry.h"
 #include "../iHateMyself/HealthPot.h"
-#include "Monster.h"
-#include "ManaPot.h"
-#include "IConsumable.h"
-#include "Hero.h"
+#include "../iHateMyself/Monster.h"
+#include "../iHateMyself/ManaPot.h"
+#include "../iHateMyself/IConsumable.h"
+#include "../iHateMyself/Hero.h"
 
 std::vector<Loot> loots;
 
 
-int getNumInput(int min) {
-
+int GetNumInput(int min, int max) {
 	int in;
-
 	while (true) {
-		try {
-			std::cin >> in;
-
-			if (in < min || in > INT_MAX) {
-				throw "error";
-			}
-
+		if (!(std::cin >> in)) {
+			std::cerr << "Integers only please." << std::endl;
+			std::cin.clear();
+			std::cin.ignore(10000, '\n');
+		} else {
+		if (in < min || in > max) {
+			std::cerr << "Error. Bad input." << std::endl;
+		} else {
 			return in;
-		} catch (...) {
-			std::cout << "Invalid number. Try again." << std::endl;
+			}
 		}
 	}
 }
 
-Armor* genArmor() {
+Armor* GenArmor() {
 	switch (rand() % 5) {
 	case 0:
 		return new Armor(Armor::HELMET, 0 - (rand() % 3), (rand() % 6) + 1,
@@ -61,7 +58,7 @@ Armor* genArmor() {
 	}
 }
 
-Berry::BerryType genBerryType(int h) {
+Berry::BerryType GenBerryType(int h) {
 	switch (h) {
 	case 0:
 		return Berry::CRABAPPLE;
@@ -78,7 +75,7 @@ Berry::BerryType genBerryType(int h) {
 	}
 }
 
-IConsumable* genConsumable() {
+IConsumable* GenConsumable() {
 	int r = rand() % 3;
 
 	switch (r) {
@@ -87,11 +84,11 @@ IConsumable* genConsumable() {
 	case 1:
 		return new ManaPot();
 	default:
-		return new Berry(genBerryType(rand() % 6));
+		return new Berry(GenBerryType(rand() % 6));
 	}
 }
 
-Weapon::WeaponType genWeaponType() {
+Weapon::WeaponType GenWeaponType() {
 	switch (rand() % 5) {
 	case 0:
 		return Weapon::MACE;
@@ -106,32 +103,32 @@ Weapon::WeaponType genWeaponType() {
 	}
 }
 
-Loot* genLootItem(Loot::LootType t) {
+Loot* GenLootItem(Loot::LootType t) {
 	switch (t) {
 	case Loot::GENERIC:
 		return new Loot(rand() % 7);
 	case Loot::ARMOR:
-		return genArmor();
+		return GenArmor();
 	case Loot::WEAPON:
-		return new Weapon(genWeaponType(), (rand() % 50), (rand() % 50) + 50);
+		return new Weapon(GenWeaponType(), (rand() % 50), (rand() % 50) + 50);
 	default:
-		return (Loot*) genConsumable();
+		return dynamic_cast<Loot*>(GenConsumable());
 	}
 }
 
-Monster genMonster(Monster::MonsterType t, bool isBoss, std::string n) {
+Monster GenMonster(Monster::MonsterType t, bool isBoss, std::string n) {
 		return Monster((rand() % 27) + 3, (rand() % 27) + 3, (rand() % 27) + 3,
 				n, t, isBoss);
 }
 
 
-Hero genHero(Hero::HeroClass t, Hero::HeroRace r, std::string n) {
+Hero GenHero(Hero::HeroClass t, Hero::HeroRace r, std::string n) {
 	return Hero((rand() % 27) + 3, (rand() % 27) + 3, (rand() % 27) + 3, n, r,
 			t);
 }
 
 
-Loot::LootType genType() {
+Loot::LootType GenType() {
 	int r = rand() % 4;
 	switch (r) {
 	case 0:
@@ -145,41 +142,41 @@ Loot::LootType genType() {
 	}
 }
 
-void useOn(Being* b, IConsumable* l) {
-	std::cout << l->getDesc() << std::endl;
-	std::cout << b->getDesc() << std::endl;
-	l->use(b);
-	std::cout << b->getDesc() << std::endl;
+void UseOn(Being* b, IConsumable* l) {
+	std::cout << l->GetDesc() << std::endl;
+	std::cout << b->GetDesc() << std::endl;
+	l->Use(b);
+	std::cout << b->GetDesc() << std::endl;
 }
 
-void attack(IAttackable* b1, IAttackable* b2) {
-	std::cout << b1->getDesc() + " " + std::to_string(b1->getCurrentHealth())
+void Attack(IAttackable* b1, IAttackable* b2) {
+	std::cout << b1->GetDesc() + " " + std::to_string(b1->GetCurrentHealth())
 			<< std::endl;
-	std::cout << b2->getDesc() + " " + std::to_string(b2->getCurrentHealth())
+	std::cout << b2->GetDesc() + " " + std::to_string(b2->GetCurrentHealth())
 			<< std::endl;
-	b1->takeDmg(b2->attack());
-	std::cout << b1->getDesc() + " " + std::to_string(b1->getCurrentHealth())
+	b1->TakeDmg(b2->Attack());
+	std::cout << b1->GetDesc() + " " + std::to_string(b1->GetCurrentHealth())
 			<< std::endl;
-	std::cout << b2->getDesc() + " " + std::to_string(b2->getCurrentHealth())
+	std::cout << b2->GetDesc() + " " + std::to_string(b2->GetCurrentHealth())
 			<< std::endl;
 }
 
 
-bool demo(int num) {
-	auto consum = genConsumable();
-	Hero dum = genHero(Hero::FIGHTER, Hero::HUMAN, "Human");
+bool Demo(int num) {
+	auto consum = GenConsumable();
+	Hero dum = GenHero(Hero::FIGHTER, Hero::HUMAN, "Human");
 	Hero* dummy = &dum;
-	Monster mon = genMonster(Monster::TROLL, false, "monster");
+	Monster mon = GenMonster(Monster::TROLL, false, "monster");
 	Monster* monster = &mon;
 	switch (num) {
 	case 1:
-		useOn(dummy, consum);
+		UseOn(dummy, consum);
 		break;
 	case 2:
-		attack(dummy, monster);
+		Attack(dummy, monster);
 		break;
 	case 3:
-		attack(monster, dummy);
+		Attack(monster, dummy);
 		break;
 	default:
 		return true;
@@ -189,7 +186,7 @@ bool demo(int num) {
 
 
 
-void run() {
+void Run() {
 	srand(time(NULL));
 	int selection;
 	bool quit = false;
@@ -197,45 +194,45 @@ void run() {
 	Loot::LootType t;
 	do {
 		std::cout
-				<< "0) exit\n1) Generate one loot\n2) Generate some loots\n3) Generate n loots\n4) Demonstrate"
+				<< "0) Exit\n1) Generate one loot\n2) Generate some loots\n3) Generate n loots\n4) Demonstrate"
 				<< std::endl;
 
-		selection = getNumInput(0);
+		selection = GetNumInput(0, 4);
 		switch (selection) {
 		case 1:
 
-			t = genType();
+			t = GenType();
 			if (t != Loot::CONSUMABLE) {
-				loots.push_back(*genLootItem(t));
+				loots.push_back(*GenLootItem(t));
 			} else {
-				loots.push_back(*(Loot*) genConsumable());
+				loots.push_back(*dynamic_cast<Loot*>(GenConsumable()));
 			}
 			break;
 
 		case 2:
 			q = (rand() % 10) + 1;
 			for (int i = 0; i < q; i++) {
-				t = genType();
+				t = GenType();
 				if (t != Loot::CONSUMABLE) {
-					loots.push_back(*genLootItem(t));
+					loots.push_back(*GenLootItem(t));
 				} else {
-					loots.push_back(*(Loot*) genConsumable());
+					loots.push_back(*dynamic_cast<Loot*>(GenConsumable()));
 				}
 			}
 			break;
 
 		case 3:
 
-			printf("How many loots to generate? 1-%d", INT_MAX);
+			std::cout << "How many loots to generate? 1-1000" << std::endl;
 
-			q = getNumInput(1);
+			q = GetNumInput(1, 1000);
 
 			for (int i = 0; i < q; i++) {
-				t = genType();
+				t = GenType();
 				if (t != Loot::CONSUMABLE) {
-					loots.push_back(*genLootItem(t));
+					loots.push_back(*GenLootItem(t));
 				} else {
-					loots.push_back(*(Loot*) genConsumable());
+					loots.push_back(*dynamic_cast<Loot*>(GenConsumable()));
 				}
 			}
 			break;
@@ -245,8 +242,8 @@ void run() {
 					<< "What would you like demonstrated?\n0) Exit\n1) Random consumable\n2) Hero attack monster\n3) Monster attack hero"
 					<< std::endl;
 
-			q = getNumInput(0);
-			quit = demo(q);
+			q = GetNumInput(0, 3);
+			quit = Demo(q);
 
 
 			break;
@@ -257,7 +254,7 @@ void run() {
 		}
 
 		for (Loot loot : loots) {
-			std::cout << loot.getDesc() << std::endl;
+			std::cout << loot.GetDesc() << std::endl;
 		}
 		std::cout << std::endl;
 
@@ -266,6 +263,6 @@ void run() {
 }
 
 int main() {
-	run();
+	Run();
 	return 0;
 }

@@ -19,8 +19,8 @@ public:
 
 	HealthPot();
 
-	void use(Being* & b) override;
-	std::string getDesc() const;
+	void Use(Being* & b) override;
+	std::string GetDesc() const;
 
 protected:
 private:

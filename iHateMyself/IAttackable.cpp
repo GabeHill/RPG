@@ -8,28 +8,28 @@
 
 #include "IAttackable.h"
 
-void IAttackable::setEquipWeapon(Weapon w) {
+void IAttackable::SetEquipWeapon(Weapon w) {
 	equipedWeapon = w;
 }
-void IAttackable::setEquipArmor(Armor w) {
+void IAttackable::SetEquipArmor(Armor w) {
 	equippedArmor = w;
 }
-void IAttackable::storeWeapon(Weapon w) {
+void IAttackable::StoreWeapon(Weapon w) {
 	storedWeapons.push_back(w);
 }
-void IAttackable::storeArmor(Armor w) {
+void IAttackable::StoreArmor(Armor w) {
 	storedArmor.push_back(w);
 }
 
-Weapon IAttackable::getEquipWeapon() const {
+Weapon IAttackable::GetEquipWeapon() const {
 	return equipedWeapon;
 }
-Armor IAttackable::getEquipArmor() const {
+Armor IAttackable::GetEquipArmor() const {
 	return equippedArmor;
 }
-std::vector<Weapon> IAttackable::getStoredWeapons() const {
+std::vector<Weapon> IAttackable::GetStoredWeapons() const {
 	return storedWeapons;
 }
-std::vector<Armor> IAttackable::getStoredArmor() const {
+std::vector<Armor> IAttackable::GetStoredArmor() const {
 	return storedArmor;
 }

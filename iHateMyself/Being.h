@@ -14,29 +14,29 @@ class Being {
 
 public:
 
-	void changeIntelligence(int changeBy);
-	void changeStrength(int changeBy);
-	void changeDexterity(int changeBy);
-	void changeHealth(int changeBy);
-	void changeMana(int changeBy);
-	void changeArmor(int changeBy);
-	void setMaxHealth(int max, bool restoreAll);
-	void setMaxMana(int max, bool restoreAll);
+	void ChangeIntelligence(int changeBy);
+	void ChangeStrength(int changeBy);
+	void ChangeDexterity(int changeBy);
+	void ChangeHealth(int changeBy);
+	void ChangeMana(int changeBy);
+	void ChangeArmor(int changeBy);
+	void SetMaxHealth(int max, bool restoreAll);
+	void SetMaxMana(int max, bool restoreAll);
 
-	int getIntelligence() const;
-	int getIntelMod() const;
-	int getStrength() const;
-	int getStrengthMod() const;
-	int getDexterity() const;
-	int getDexMod() const;
-	int getMaxHealth() const;
-	int getCurrentHealth() const;
-	int getMaxMana() const;
-	int getCurrentMana() const;
-	int getArmorClass() const;
-	std::string getName() const;
+	int GetIntelligence() const;
+	int GetIntelMod() const;
+	int GetStrength() const;
+	int GetStrengthMod() const;
+	int GetDexterity() const;
+	int GetDexMod() const;
+	int GetMaxHealth() const;
+	int GetCurrentHealth() const;
+	int GetMaxMana() const;
+	int GetCurrentMana() const;
+	int GetArmorClass() const;
+	std::string GetName() const;
 
-	std::string getDesc() const;
+	std::string GetDesc() const;
 
 protected:
 	int intelligence = 0, intelligenceMod = 0, strength = 0, strengthMod = 0,
@@ -51,10 +51,10 @@ private:
 private:
 	std::string name;
 
-	void setModifiers();
-	int setMod(int stat) const;
-	int setMana() const;
-	int setHealth() const;
+	void SetModifiers();
+	int SetMod(int stat) const;
+	int SetMana() const;
+	int SetHealth() const;
 };
 
 #endif /* HEADERS_BEING_H_ */

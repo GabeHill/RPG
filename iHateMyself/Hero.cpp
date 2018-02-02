@@ -15,10 +15,10 @@ Hero::Hero(int i, int s, int d, std::string n, HeroRace r, HeroClass c) :
 	cl = c;
 }
 
-int Hero::attack() const {
-		return getEquipWeapon().getDamage() + getStrengthMod();
+int Hero::Attack() const {
+	return GetEquipWeapon().GetDamage() + GetStrengthMod();
 }
-void Hero::takeDmg(int dmg) {
+void Hero::TakeDmg(int dmg) {
 //	dmg -=
 //			(getEquipArmor().getDefense()
 //					+ (getStrengthMod() > getDexMod() ?
@@ -26,20 +26,20 @@ void Hero::takeDmg(int dmg) {
 //	if (dmg < 0) {
 //		dmg = 0;
 //	}
-	changeHealth(dmg);
+	ChangeHealth(dmg);
 }
-Hero::HeroRace Hero::getRace() const {
-	return race;
+std::string Hero::GetRace() const {
+	return raceNames[race];
 }
-Hero::HeroClass Hero::getClass() const {
-	return cl;
+std::string Hero::GetClass() const {
+	return classNames[cl];
 }
 
-std::string Hero::getDesc() const {
-	std::string f = std::to_string(getRace()) + ", " + std::to_string(cl) + ", "
-			+ getName() + ".";
+std::string Hero::GetDesc() const {
+	std::string f = GetRace() + ", " + GetClass() + ", "
+			+ GetName() + ".";
 	return f;
 }
-int Hero::getCurrentHealth() const {
+int Hero::GetCurrentHealth() const {
 	return currentHealth;
 }
