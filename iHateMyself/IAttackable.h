@@ -24,13 +24,13 @@ public:
 	virtual int GetCurrentHealth() const=0;
 
 
-	void SetEquipWeapon(Weapon w);
-	void SetEquipArmor(Armor w);
-	void StoreWeapon(Weapon w);
-	void StoreArmor(Armor w);
+	void SetEquipWeapon(Weapon* w);
+	void SetEquipArmor(Armor* w);
+	void StoreWeapon(Weapon &w);
+	void StoreArmor(Armor &w);
 
-	Weapon GetEquipWeapon() const;
-	Armor GetEquipArmor() const;
+	Weapon* GetEquipWeapon() const;
+	Armor* GetEquipArmor() const;
 	std::vector<Weapon> GetStoredWeapons() const;
 	std::vector<Armor> GetStoredArmor() const;
 
@@ -39,10 +39,10 @@ public:
 	}
 
 protected:
-	Weapon equipedWeapon;
-	Armor equippedArmor;
-	std::vector<Weapon> storedWeapons;
-	std::vector<Armor> storedArmor;
+	Weapon* equipedWeapon;
+	Armor* equippedArmor;
+	std::vector<Weapon> storedWeapons { 3 };
+	std::vector<Armor> storedArmor { 3 };
 private:
 };
 

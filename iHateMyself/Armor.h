@@ -17,7 +17,7 @@ public:
 		HELMET, CHESTPLATE, GAUNTLETS, PAULDRONS, BOOTS
 	};
 
-	std::array<std::string, 5> pieceNames = { "helmet", "chestplate",
+	const std::vector<std::string> pieceNames = { "helmet", "chestplate",
 			"gauntlets", "pauldrons", "boots" };
 
 	Armor();

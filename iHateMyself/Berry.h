@@ -19,7 +19,7 @@ public:
 		NIGHTSHADE, BLUEBERRY, RASBERRY, JUNIPER, YEW, CRABAPPLE
 	};
 
-	std::array<std::string, 6> berryNames = { "nightshade", "blueberry",
+	const std::vector<std::string> berryNames = { "nightshade", "blueberry",
 			"rasberry", "juniper", "yew", "crabapple" };
 
 	Berry(BerryType t);

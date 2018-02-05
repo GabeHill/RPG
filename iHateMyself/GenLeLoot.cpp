@@ -106,24 +106,24 @@ Weapon::WeaponType GenWeaponType() {
 Loot* GenLootItem(Loot::LootType t) {
 	switch (t) {
 	case Loot::GENERIC:
-		return new Loot(rand() % 7);
+		return *Loot(rand() % 7);
 	case Loot::ARMOR:
 		return GenArmor();
 	case Loot::WEAPON:
-		return new Weapon(GenWeaponType(), (rand() % 50), (rand() % 50) + 50);
+		return *Weapon(GenWeaponType(), (rand() % 50), (rand() % 50) + 50);
 	default:
 		return dynamic_cast<Loot*>(GenConsumable());
 	}
 }
 
-Monster GenMonster(Monster::MonsterType t, bool isBoss, std::string n) {
-		return Monster((rand() % 27) + 3, (rand() % 27) + 3, (rand() % 27) + 3,
+Monster* GenMonster(Monster::MonsterType t, bool isBoss, std::string n) {
+	return *Monster((rand() % 27) + 3, (rand() % 27) + 3, (rand() % 27) + 3,
 				n, t, isBoss);
 }
 
 
-Hero GenHero(Hero::HeroClass t, Hero::HeroRace r, std::string n) {
-	return Hero((rand() % 27) + 3, (rand() % 27) + 3, (rand() % 27) + 3, n, r,
+Hero* GenHero(Hero::HeroClass t, Hero::HeroRace r, std::string n) {
+	return *Hero((rand() % 27) + 3, (rand() % 27) + 3, (rand() % 27) + 3, n, r,
 			t);
 }
 
@@ -162,26 +162,22 @@ void Attack(IAttackable* b1, IAttackable* b2) {
 }
 
 
-bool Demo(int num) {
-	auto consum = GenConsumable();
-	Hero dum = GenHero(Hero::FIGHTER, Hero::HUMAN, "Human");
-	Hero* dummy = &dum;
-	Monster mon = GenMonster(Monster::TROLL, false, "monster");
-	Monster* monster = &mon;
+void Demo(int num) {
 	switch (num) {
 	case 1:
-		UseOn(dummy, consum);
+		UseOn(GenHero(Hero::FIGHTER, Hero::HUMAN, "Human"), GenConsumable());
 		break;
 	case 2:
-		Attack(dummy, monster);
+		Attack(GenMonster(Monster::TROLL, false, "monster"),
+				GenHero(Hero::FIGHTER, Hero::HUMAN, "Human"));
 		break;
 	case 3:
-		Attack(monster, dummy);
+		Attack(GenHero(Hero::FIGHTER, Hero::HUMAN, "Human"),
+				GenMonster(Monster::TROLL, false, "monster"));
 		break;
 	default:
-		return true;
+		break;
 	}
-	return false;
 }
 
 
@@ -243,8 +239,11 @@ void Run() {
 					<< std::endl;
 
 			q = GetNumInput(0, 3);
-			quit = Demo(q);
-
+			if (q == 0) {
+				quit = true;
+			} else {
+				Demo(q);
+			}
 
 			break;
 

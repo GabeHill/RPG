@@ -25,7 +25,7 @@ Weapon::Weapon(WeaponType t, int min, int max) :
 int Weapon::GetDamage() const {
 	int max = GetDamageMax();
 	int min = GetDamageMin();
-	return (rand() % (max = min)) + min;
+	return (rand() % (max - min)) + min;
 }
 std::string Weapon::GetWeaponType() const {
 	return weaponNames[typ];
