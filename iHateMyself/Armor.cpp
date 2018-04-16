@@ -44,23 +44,23 @@ std::string Armor::GetDesc() const {
 			+ " rating.";
 }
 /*
-std::ostream& operator<<(std::ostream& lhs, Armor::ArmorPiece e) {
-	switch (e) {
-	case Armor::HELMET:
-		lhs << "helmet";
-		break;
-	case Armor::CHESTPLATE:
-		lhs << "chestplate";
-		break;
-	case Armor::GAUNTLETS:
-		lhs << "gauntlets";
-		break;
-	case Armor::PAULDRONS:
-		lhs << "pauldrons";
-		break;
-	case Armor::BOOTS:
-		lhs << "boots";
-		break;
-	}
-	return lhs;
+ std::ostream& operator<<(std::ostream& lhs, Armor::ArmorPiece e) {
+ switch (e) {
+ case Armor::HELMET:
+ lhs << "helmet";
+ break;
+ case Armor::CHESTPLATE:
+ lhs << "chestplate";
+ break;
+ case Armor::GAUNTLETS:
+ lhs << "gauntlets";
+ break;
+ case Armor::PAULDRONS:
+ lhs << "pauldrons";
+ break;
+ case Armor::BOOTS:
+ lhs << "boots";
+ break;
+ }
+ return lhs;
  }*/

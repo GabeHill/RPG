@@ -23,7 +23,6 @@ public:
 	virtual std::string GetDesc() const=0;
 	virtual int GetCurrentHealth() const=0;
 
-
 	void SetEquipWeapon(Weapon* w);
 	void SetEquipArmor(Armor* w);
 	void StoreWeapon(Weapon &w);

@@ -42,23 +42,23 @@ std::string Weapon::GetDesc() const {
 }
 
 /*
-std::ostream& operator<<(std::ostream& out, Weapon::WeaponType e) {
-	switch (e) {
-	case Weapon::MACE:
-		out << "mace";
-		break;
-	case Weapon::SWORD:
-		out << "sword";
-		break;
-	case Weapon::BOW:
-		out << "bow";
-		break;
-	case Weapon::DAGGER:
-		out << "dagger";
-		break;
-	case Weapon::AXE:
-		out << "AXE";
-		break;
-	}
-	return out;
+ std::ostream& operator<<(std::ostream& out, Weapon::WeaponType e) {
+ switch (e) {
+ case Weapon::MACE:
+ out << "mace";
+ break;
+ case Weapon::SWORD:
+ out << "sword";
+ break;
+ case Weapon::BOW:
+ out << "bow";
+ break;
+ case Weapon::DAGGER:
+ out << "dagger";
+ break;
+ case Weapon::AXE:
+ out << "AXE";
+ break;
+ }
+ return out;
  }*/

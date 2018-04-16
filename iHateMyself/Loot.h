@@ -22,10 +22,8 @@ public:
 	};
 
 	const std::vector<std::string> lootNames = { "armor", "consumable",
-			"weapon",
-			"generic" };
-	const std::vector<std::string> genericLootNames = { "pelt", "chair",
-			"pot",
+			"weapon", "generic" };
+	const std::vector<std::string> genericLootNames = { "pelt", "chair", "pot",
 			"rug", "bucket", "hat", "cloth" };
 
 	Loot(GenericLoot g);

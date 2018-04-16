@@ -12,7 +12,6 @@
 #include "../iHateMyself/Loot.h"
 #include "IConsumable.h"
 
-
 class HealthPot: public Loot, public IConsumable {
 
 public:

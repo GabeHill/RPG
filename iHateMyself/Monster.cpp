@@ -30,8 +30,7 @@ std::string Monster::GetType() const {
 	return typeNames[type];
 }
 std::string Monster::GetDesc() const {
-	std::string f = GetType() + ", is " + (boss ? "" : "not")
-			+ " a boss.";
+	std::string f = GetType() + ", is " + (boss ? "" : "not") + " a boss.";
 	return f;
 }
 int Monster::GetCurrentHealth() const {

@@ -24,5 +24,4 @@ private:
 
 };
 
-
 #endif /* ICONSUMABLE_H_ */

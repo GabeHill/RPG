@@ -28,7 +28,6 @@ public:
 	const std::vector<std::string> classNames = { "rouge", "ranger", "wizard",
 			"fighter", "barbarian", "cleric", "monk" };
 
-
 	Hero(int i, int s, int d, std::string n, HeroRace r, HeroClass c);
 
 	int Attack() const;

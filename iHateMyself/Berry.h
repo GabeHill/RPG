@@ -12,7 +12,6 @@
 #include "../iHateMyself/Loot.h"
 #include "IConsumable.h"
 
-
 class Berry: public Loot, public IConsumable {
 public:
 	enum BerryType {

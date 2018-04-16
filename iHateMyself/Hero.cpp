@@ -18,8 +18,8 @@ Hero::Hero(int i, int s, int d, std::string n, HeroRace r, HeroClass c) :
 int Hero::Attack() const {
 	Weapon* f = GetEquipWeapon();
 	if (f) {
-	int l = f->GetDamage();
-	return l + GetStrengthMod();
+		int l = f->GetDamage();
+		return l + GetStrengthMod();
 	}
 	return GetStrengthMod() * 2;
 }
@@ -41,8 +41,7 @@ std::string Hero::GetClass() const {
 }
 
 std::string Hero::GetDesc() const {
-	std::string f = GetRace() + ", " + GetClass() + ", "
-			+ GetName() + ".";
+	std::string f = GetRace() + ", " + GetClass() + ", " + GetName() + ".";
 	return f;
 }
 int Hero::GetCurrentHealth() const {

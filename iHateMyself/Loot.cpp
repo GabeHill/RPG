@@ -77,46 +77,46 @@ std::string Loot::GetDesc() const {
 }
 
 /*
-std::ostream& operator<<(std::ostream& out, Loot::LootType e) {
-	switch (e) {
-	case Loot::ARMOR:
-		out << "armor";
-		break;
-	case Loot::CONSUMABLE:
-		out << "consumable";
-		break;
-	case Loot::WEAPON:
-		out << "weapon";
-		break;
-	case Loot::GENERIC:
-		out << "generic";
-		break;
-	}
-	return out;
-}
-std::ostream& operator<<(std::ostream& out, Loot::GenericLoot e) {
-	switch (e) {
-	case Loot::PELT:
-		out << "pelt";
-		break;
-	case Loot::CHAIR:
-		out << "chair";
-		break;
-	case Loot::POT:
-		out << "pot";
-		break;
-	case Loot::RUG:
-		out << "rug";
-		break;
-	case Loot::BUCKET:
-		out << "bucket";
-		break;
-	case Loot::HAT:
-		out << "hat";
-		break;
-	case Loot::CLOTH:
-		out << "cloth";
-		break;
-	}
-	return out;
+ std::ostream& operator<<(std::ostream& out, Loot::LootType e) {
+ switch (e) {
+ case Loot::ARMOR:
+ out << "armor";
+ break;
+ case Loot::CONSUMABLE:
+ out << "consumable";
+ break;
+ case Loot::WEAPON:
+ out << "weapon";
+ break;
+ case Loot::GENERIC:
+ out << "generic";
+ break;
+ }
+ return out;
+ }
+ std::ostream& operator<<(std::ostream& out, Loot::GenericLoot e) {
+ switch (e) {
+ case Loot::PELT:
+ out << "pelt";
+ break;
+ case Loot::CHAIR:
+ out << "chair";
+ break;
+ case Loot::POT:
+ out << "pot";
+ break;
+ case Loot::RUG:
+ out << "rug";
+ break;
+ case Loot::BUCKET:
+ out << "bucket";
+ break;
+ case Loot::HAT:
+ out << "hat";
+ break;
+ case Loot::CLOTH:
+ out << "cloth";
+ break;
+ }
+ return out;
  }*/

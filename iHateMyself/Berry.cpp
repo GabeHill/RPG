@@ -43,4 +43,3 @@ std::string Berry::GetDesc() const {
 	return GetType();
 }
 
-
