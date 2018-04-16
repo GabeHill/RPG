@@ -17,7 +17,7 @@ public:
 		ORC, DRAGON, GOBLIN, KOBOLD, TROLL, GIANT
 	};
 
-	std::array<std::string, 6> typeNames = { "orc", "dragon", "goblin",
+	const std::vector<std::string> typeNames = { "orc", "dragon", "goblin",
 			"kobold", "troll", "giant" };
 
 	Monster(int i, int s, int d, std::string n, MonsterType t, bool isBoss);

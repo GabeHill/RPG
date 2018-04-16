@@ -173,10 +173,10 @@ bool Demo(int num) {
 		UseOn(dummy, consum);
 		break;
 	case 2:
-		Attack(dummy, monster);
+		Attack(monster, dummy);
 		break;
 	case 3:
-		Attack(monster, dummy);
+		Attack(dummy, monster);
 		break;
 	default:
 		return true;

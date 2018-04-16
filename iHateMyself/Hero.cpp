@@ -16,7 +16,12 @@ Hero::Hero(int i, int s, int d, std::string n, HeroRace r, HeroClass c) :
 }
 
 int Hero::Attack() const {
-	return GetEquipWeapon().GetDamage() + GetStrengthMod();
+	Weapon* f = GetEquipWeapon();
+	if (f) {
+	int l = f->GetDamage();
+	return l + GetStrengthMod();
+	}
+	return GetStrengthMod() * 2;
 }
 void Hero::TakeDmg(int dmg) {
 //	dmg -=

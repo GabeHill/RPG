@@ -4,7 +4,7 @@
  *  Created on: Jan 23, 2018
  *      Author: owner
  */
-
+#include <iostream>
 #include "../iHateMyself/Monster.h"
 
 Monster::Monster(int i, int s, int d, std::string n, MonsterType t, bool isBoss) :

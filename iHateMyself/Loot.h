@@ -8,7 +8,7 @@
 #ifndef HEADERS_LOOT_LOOT_H_
 #define HEADERS_LOOT_LOOT_H_
 #include <string>
-#include <map>
+#include <vector>
 
 class Loot {
 public:
@@ -21,9 +21,11 @@ public:
 		PELT, CHAIR, POT, RUG, BUCKET, HAT, CLOTH
 	};
 
-	std::array<std::string, 4> lootNames = { "armor", "consumable", "weapon",
+	const std::vector<std::string> lootNames = { "armor", "consumable",
+			"weapon",
 			"generic" };
-	std::array<std::string, 7> genericLootNames = { "pelt", "chair", "pot",
+	const std::vector<std::string> genericLootNames = { "pelt", "chair",
+			"pot",
 			"rug", "bucket", "hat", "cloth" };
 
 	Loot(GenericLoot g);

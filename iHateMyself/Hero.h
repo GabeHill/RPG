@@ -23,9 +23,9 @@ public:
 		ROUGE, RANGER, WIZARD, FIGHTER, BARBARIAN, CLERIC, MONK
 	};
 
-	std::array<std::string, 6> raceNames = { "dragonborn", "taxabi", "elf",
+	const std::vector<std::string> raceNames = { "dragonborn", "taxabi", "elf",
 			"halfling", "tiefling", "human" };
-	std::array<std::string, 7> classNames = { "rouge", "ranger", "wizard",
+	const std::vector<std::string> classNames = { "rouge", "ranger", "wizard",
 			"fighter", "barbarian", "cleric", "monk" };
 
 

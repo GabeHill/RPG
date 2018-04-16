@@ -16,8 +16,8 @@ public:
 		MACE, SWORD, BOW, DAGGER, AXE
 	};
 
-	std::array<std::string, 5> weaponNames = { "mace", "sword", "bow", "dagger",
-			"axe" };
+	const std::vector<std::string> weaponNames = { "mace", "sword", "bow",
+			"dagger", "axe" };
 
 	Weapon();
 	Weapon(WeaponType t, int min, int max);
