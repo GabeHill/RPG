@@ -38,6 +38,7 @@ int GetNumInput(int min, int max) {
 	}
 }
 
+
 Armor* GenArmor() {
 	switch (rand() % 5) {
 	case 0:
@@ -58,6 +59,7 @@ Armor* GenArmor() {
 	}
 }
 
+
 Berry::BerryType GenBerryType(int h) {
 	switch (h) {
 	case 0:
@@ -75,6 +77,7 @@ Berry::BerryType GenBerryType(int h) {
 	}
 }
 
+
 IConsumable* GenConsumable() {
 	int r = rand() % 3;
 
@@ -87,6 +90,7 @@ IConsumable* GenConsumable() {
 		return new Berry(GenBerryType(rand() % 6));
 	}
 }
+
 
 Weapon::WeaponType GenWeaponType() {
 	switch (rand() % 5) {
@@ -103,6 +107,7 @@ Weapon::WeaponType GenWeaponType() {
 	}
 }
 
+
 Loot* GenLootItem(Loot::LootType t) {
 	switch (t) {
 	case Loot::GENERIC:
@@ -115,6 +120,7 @@ Loot* GenLootItem(Loot::LootType t) {
 		return dynamic_cast<Loot*>(GenConsumable());
 	}
 }
+
 
 Monster GenMonster(Monster::MonsterType t, bool isBoss, std::string n) {
 		return Monster((rand() % 27) + 3, (rand() % 27) + 3, (rand() % 27) + 3,
@@ -142,12 +148,14 @@ Loot::LootType GenType() {
 	}
 }
 
+
 void UseOn(Being* b, IConsumable* l) {
 	std::cout << l->GetDesc() << std::endl;
 	std::cout << b->GetDesc() << std::endl;
 	l->Use(b);
 	std::cout << b->GetDesc() << std::endl;
 }
+
 
 void Attack(IAttackable* b1, IAttackable* b2) {
 	std::cout << b1->GetDesc() + " " + std::to_string(b1->GetCurrentHealth())
@@ -163,7 +171,8 @@ void Attack(IAttackable* b1, IAttackable* b2) {
 
 
 bool Demo(int num) {
-	auto consum = GenConsumable();
+	bool r = false;
+	IConsumable* consum = GenConsumable();
 	Hero dum = GenHero(Hero::FIGHTER, Hero::HUMAN, "Human");
 	Hero* dummy = &dum;
 	Monster mon = GenMonster(Monster::TROLL, false, "monster");
@@ -179,9 +188,10 @@ bool Demo(int num) {
 		Attack(dummy, monster);
 		break;
 	default:
-		return true;
+		r = true;
 	}
-	return false;
+	delete (consum);
+	return r;
 }
 
 
@@ -261,6 +271,7 @@ void Run() {
 		loots.clear();
 	} while (!quit);
 }
+
 
 int main() {
 	Run();
